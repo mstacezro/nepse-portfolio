@@ -1,0 +1,101 @@
+ PHASE 1: Project Structure Setup
+Create a root folder for your project
+
+Inside it, create two main folders: one for the backend (backend/) and one for the frontend (frontend/)
+
+Initialize a Git repository (optional but recommended)
+
+✅ PHASE 2: Backend Setup with Django + DRF
+Create a virtual environment and initialize a Django project inside backend/
+
+Install required Python packages: Django, DRF, PostgreSQL driver, Celery, Redis, etc.
+
+Create a new Django app (e.g., portfolio)
+
+Set up PostgreSQL database connection in Django settings
+
+Create database models:
+
+User (built-in or custom)
+
+FamilyMember (related to User)
+
+Holding (related to FamilyMember)
+
+Set up Django REST Framework and define serializers, views, and URLs for APIs
+
+Implement JWT-based authentication
+
+Add admin panel entries for your models
+
+✅ PHASE 3: Celery for NEPSE Data Fetching
+Set up Celery configuration in your Django project
+
+Connect Redis as the message broker
+
+Write a Celery task to fetch NEPSE live data (API or scraping)
+
+Use Celery Beat to schedule the task every 10 seconds
+
+Store fetched data in cache or database
+
+✅ PHASE 4: Frontend Setup with React
+Initialize a React app inside frontend/
+
+Install required packages: Axios, React Router DOM, etc.
+
+Design and implement pages:
+
+Login/Register
+
+Dashboard with:
+
+Family Members
+
+Their Holdings
+
+Live NEPSE data display
+
+Connect React frontend with Django backend using Axios
+
+Handle JWT authentication on the frontend
+
+✅ PHASE 5: Dockerize the Project
+Create Dockerfiles for both backend and frontend
+
+Create a docker-compose.yml to run:
+
+Backend (Django + Gunicorn)
+
+Frontend (React)
+
+PostgreSQL
+
+Redis
+
+Celery worker
+
+Celery beat
+
+Add environment variables via .env file
+
+Test the entire system by running docker-compose up
+
+✅ PHASE 6: Testing and Improvements
+Run Django migrations and create superuser
+
+Test APIs using Postman or browser
+
+Test periodic NEPSE data fetching
+
+Test React frontend UI & state updates
+
+Add improvements:
+
+Input validation
+
+Loading/error states
+
+Graphs for portfolio value over time
+
+Notifications on price movements
